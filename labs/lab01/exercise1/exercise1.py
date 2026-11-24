@@ -1,10 +1,16 @@
-# Lab 01 Exercise 1: Road Trip Budgeter
-# Write your code below:
+# Define the function once
+def calculate_bill(meal_price):
+    tax = meal_price * 0.08
+    service_charge = 2.00
+    total = meal_price + tax + service_charge
+    return total
 
-def is_budget_sufficient(one_way_km, km_per_liter, price_per_liter, budget):
-    # TODO: Implement this function
-    # Calculate round trip cost and checks if within budget
-    pass
+# Now reuse it for each customer
+total1 = calculate_bill(8.50)  # Nasi Lemak
+print(f"Customer 1 total: RM{total1:.2f}")
 
-# Test your code here
-print("Testing Road Trip Budgeter...")
+total2 = calculate_bill(3.50)  # Roti Canai
+print(f"Customer 2 total: RM{total2:.2f}")
+
+total3 = calculate_bill(7.00)  # Mee Goreng
+print(f"Customer 3 total: RM{total3:.2f}")
