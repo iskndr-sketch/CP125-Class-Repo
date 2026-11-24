@@ -1,16 +1,9 @@
-# Define the function once
-def calculate_bill(meal_price):
-    tax = meal_price * 0.08
-    service_charge = 2.00
-    total = meal_price + tax + service_charge
-    return total
+def is_budget_sufficient(one_way_km,budget):
+    round_trip = one_way_km * 2
+    liter = round_trip / 10
+    cost = liter * 2.00
+    return budget >= cost
 
-# Now reuse it for each customer
-total1 = calculate_bill(8.50)  # Nasi Lemak
-print(f"Customer 1 total: RM{total1:.2f}")
+print(is_budget_sufficient(100, 40)) # True
+print(is_budget_sufficient(100, 39)) # False
 
-total2 = calculate_bill(3.50)  # Roti Canai
-print(f"Customer 2 total: RM{total2:.2f}")
-
-total3 = calculate_bill(7.00)  # Mee Goreng
-print(f"Customer 3 total: RM{total3:.2f}")
